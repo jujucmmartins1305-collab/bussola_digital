@@ -1,11 +1,5 @@
 Como fazer meu filho ter segurança digital?
-Chatbot: O segredo é o diálogo.
-Ensine-o a nunca compartilhar
-senhas com amigos, a não aceitar
-convites de estranhos em redes
-sociais e a sempre avisar você se
-encontrar algo desconfortável na
-internet.
+Chatbot: O segredo é o diálogo. Ensine-o a nunca compartilhar senhas com amigos, a não aceitar convites de estranhos em redes sociais e a sempre avisar você se encontrar algo desconfortável na internet.
 
 Como me proteger de hackers?
 Chatbot: Use sempre a autenticação
