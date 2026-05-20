@@ -1,4 +1,4 @@
-import chatbot
+import bussola_digital.backend.chatbot as chatbot
 import os
 def start():
     print('Olá! Bem-vindo ao Bússola Digital')
