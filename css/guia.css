@@ -1,0 +1,248 @@
+:root {
+    --accent-cyan: #0ea5a4;
+    --accent-green: #0ea5a4;
+    --accent-blue: #233455;
+    --text: #1c1f22;
+    --text-muted: #1659af;
+    --border-soft: #233455;
+    --danger: #ff5d6c;
+}
+nav, a{
+    text-decoration: none;
+    color: #e6e9ec;
+    font-weight: 500;
+    transition: .3s;
+   
+   
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    color: var(--text);
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.65;
+}
+
+
+header {
+    background: linear-gradient(135deg, #305288 0%, #123745 60%, #142642 100%);
+    text-align: center;
+    padding: 50px 20px 40px;
+    border-bottom: 3px solid var(--accent-cyan);
+    box-shadow: 0 4px 20px rgba(3, 226, 200, 0.15);
+}
+
+.titulo1 {
+    font-size: 2.4rem;
+    color: var(--accent-cyan);
+    letter-spacing: 1px;
+    text-shadow: 0 0 12px rgba(47, 230, 210, 0.45);
+    margin-bottom: 20px;
+}
+
+header img,
+.img1 {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--accent-green);
+    box-shadow: 0 0 25px rgba(92, 242, 143, 0.4);
+    background-color: var(--bg-card);
+}
+
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+}
+
+.sct1 > div {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-left: 4px solid var(--accent-cyan);
+    border-radius: 10px;
+    padding: 28px 32px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sct1 > div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(47, 230, 210, 0.18);
+}
+
+h2 {
+    color: var(--accent-cyan);
+    font-size: 1.5rem;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--border-soft);
+    padding-bottom: 8px;
+}
+
+h3 {
+    color: var(--accent-green);
+    font-size: 1.15rem;
+    margin: 16px 0 10px;
+}
+
+h4 {
+    color: var(--accent-blue);
+    font-size: 1rem;
+    margin: 14px 0 8px;
+}
+
+h5 {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 10px 0 6px;
+}
+
+p {
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+
+ul,
+ol {
+    margin: 10px 0 16px 22px;
+}
+
+li {
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+li::marker {
+    color: var(--accent-cyan);
+}
+
+.lista1 h3 {
+    margin-top: 0;
+}
+
+
+.div2 h4 + p {
+    display: inline-block;
+    font-family: "Consolas", "Courier New", monospace;
+    padding: 6px 14px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+}
+
+.div2 h4:nth-of-type(1) + p {
+    background-color: rgba(255, 93, 108, 0.12);
+    color: var(--danger);
+    border: 1px solid rgba(255, 93, 108, 0.4);
+}
+
+.div2 h4:nth-of-type(2) + p {
+    background-color: rgba(92, 242, 143, 0.12);
+    color: var(--accent-green);
+    border: 1px solid rgba(92, 242, 143, 0.4);
+}
+
+
+#tbl-1 {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 20px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid var(--border-soft) !important;
+}
+
+#tbl-1 tr {
+    border-bottom: 1px solid var(--border-soft);
+}
+
+#tbl-1 tr:nth-child(odd) {
+    background-color: rgba(58, 160, 255, 0.06);
+}
+
+#tbl-1 tr:hover {
+    background-color: rgba(47, 230, 210, 0.1);
+}
+
+#tbl-1 td {
+    padding: 12px 16px;
+    border: 1px solid var(--border-soft) !important;
+    color: var(--text);
+    vertical-align: top;
+}
+
+#tbl-1 td:first-child {
+    color: var(--accent-cyan);
+    font-weight: 600;
+    white-space: nowrap;
+    width: 50%;
+    max-width: 150px;
+    text-wrap: wrap;
+}
+
+
+.div4,
+.div5 {
+    border-left-color: var(--danger);
+}
+
+.div4 h3
+.div5 h2 {
+    color: var(--danger);
+}
+
+
+footer {
+    background: linear-gradient(135deg, #0f1827 0%, #102036 100%);
+    border-top: 3px solid var(--accent-green);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer div {
+    max-width: 800px;
+    margin: 0 auto 24px;
+}
+
+footer p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+footer img {
+    max-width: 100%;
+    width: 480px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid var(--accent-cyan);
+    box-shadow: 0 0 20px rgba(47, 230, 210, 0.2);
+}
+
+
+@media (max-width: 600px) {
+    .titulo1 {
+        font-size: 1.7rem;
+    }
+
+    .sct1 > div {
+        padding: 20px;
+    }
+
+    #tbl-1 td:first-child {
+        width: auto;
+    }
+
+    footer img {
+        width: 100%;
+    }
+}
