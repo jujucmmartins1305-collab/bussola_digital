@@ -1,91 +1,198 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bússola Digital</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Bússola Digital - Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
 
-  <header>
+<div class="top-bar"></div>
 
-    <div class="logo">
-      <img src="c:\Users\tjvit\OneDrive\Pictures\WhatsApp Image 2026-05-16 at 11.43.04 progeto.jpeg">
-      <h2>BÚSSOLA DIGITAL</h2>
-    </div>
+<header>
+  <h1>Bússola Digital</h1>
+  <nav>
+    <a href="#">Início</a>
+    <a href="./guia.html">Sobre</a>
+    <a href="./interface.exe" download="interface.exe" class="chat-btn">💬 ChatDigital</a>
+  </nav>
+</header>
 
-    <nav>
-      <a href="#">Início</a>
-      <a href="./guia.html">Guia</a>
-    </nav>
+<section class="hero">
+  <div class="hero-text">
+    <h2>Sua segurança digital <span>começa aqui</span></h2>
+    <p>Teste seus conhecimentos com este quiz rápido sobre segurança digital e cidadania online.</p>
+  </div>
+  <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87" alt="Segurança Digital">
+</section>
 
-    <a href="#" class="btn">Acessar O chat</a>
+<div class="quiz-container" id="quiz"></div>
 
-  </header>
+<footer>
+  © 2026 Bússola Digital
+</footer>
 
-  <section class="hero">
+<script>
+const quizData = [
+  {
+    question: "1. O que é uma senha forte?",
+    options: [
+      "Seu nome e data de nascimento",
+      "Uma sequência simples como 123456",
+      "Uma combinação de letras, números e símbolos",
+      "Apenas letras maiúsculas"
+    ],
+    correct: 2
+  },
+  {
+    question: "2. O que você deve fazer ao receber um e-mail suspeito?",
+    options: [
+      "Clicar imediatamente",
+      "Ignorar ou verificar antes de clicar",
+      "Encaminhar para amigos",
+      "Responder com seus dados"
+    ],
+    correct: 1
+  },
+  {
+    question: "3. O que é phishing?",
+    options: [
+      "Um tipo de vírus",
+      "Um ataque para roubar dados fingindo ser confiável",
+      "Um antivírus",
+      "Um jogo"
+    ],
+    correct: 1
+  },
+  {
+    question: "4. Por que atualizar apps?",
+    options: [
+      "Ocupar espaço",
+      "Melhorar segurança",
+      "Ficar bonito",
+      "Não é importante"
+    ],
+    correct: 1
+  },
+  {
+    question: "5. Compartilhar dados pode ser perigoso porque:",
+    options: [
+      "Facilita golpes",
+      "Todo mundo faz",
+      "Não tem problema",
+      "Só amigos veem"
+    ],
+    correct: 0
+  },
+  {
+    question: "6. O que é 2FA?",
+    options: [
+      "Duas senhas iguais",
+      "Sistema de verificação em duas etapas",
+      "Dois celulares",
+      "Login duplo"
+    ],
+    correct: 1
+  },
+  {
+    question: "7. Wi-Fi público:",
+    options: [
+      "Usar sem preocupação",
+      "Evitar acessar banco",
+      "Compartilhar arquivos",
+      "Desativar antivírus"
+    ],
+    correct: 1
+  },
+  {
+    question: "8. Cidadania digital é:",
+    options: [
+      "Usar sem regras",
+      "Só ter internet",
+      "Uso responsável e seguro",
+      "Postar qualquer coisa"
+    ],
+    correct: 2
+  }
+];
 
-    <div class="hero-text">
+let score = 0;
+let respondidas = 0;
 
-      <div class="tag">
-        Segurança • Privacidade • Confiança
-      </div>
+const quiz = document.getElementById("quiz");
 
-      <h1>
-        Sua segurança digital
-        <span>começa aqui.</span>
-      </h1>
 
-      <p>
-        Educação, ferramentas e práticas para proteger você,
-        sua família e sua empresa no mundo digital.
-      </p>
+function iniciarQuiz() {
+  quiz.innerHTML = ""; // Garante que o container estará limpo ao começar/recomeçar
+  
+  quizData.forEach((q, index) => {
+    const div = document.createElement("div");
+    div.classList.add("question");
 
-      <div class="buttons">
-        <a href="#" class="btn">Explorar conteúdos</a>
-        <a href="#" class="btn secondary">Ver como funciona</a>
-      </div>
+    div.innerHTML = `<h3>${q.question}</h3>`;
 
-    </div>
+    const optionsDiv = document.createElement("div");
+    optionsDiv.classList.add("options");
 
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop">
-    </div>
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement("button");
+      btn.innerText = opt;
 
-  </section>
+      btn.onclick = () => {
+        if (i === q.correct) {
+          btn.classList.add("correct");
+          score++;
+        } else {
+          btn.classList.add("wrong");
+        }
 
-  <section class="cards">
+        const buttons = optionsDiv.querySelectorAll("button");
+        buttons.forEach(b => b.disabled = true);
 
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png">
-      <h3>Prevenção de Incidentes</h3>
-      <p>Aprenda a identificar riscos e evitar ameaças digitais.</p>
-    </div>
+        respondidas++;
 
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/2889/2889676.png">
-      <h3>Senhas Fortes</h3>
-      <p>Boas práticas para proteger contas e dados importantes.</p>
-    </div>
+        if (respondidas === quizData.length) {
+          showResult();
+        }
+      };
 
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
-      <h3>Cidadania Online</h3>
-      <p>Use a internet com responsabilidade e segurança.</p>
-    </div>
+      optionsDiv.appendChild(btn);
+    });
 
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png">
-      <h3>Segurança Digital</h3>
-      <p>Conteúdo atualizado para manter você sempre protegido.</p>
-    </div>
+    div.appendChild(optionsDiv);
+    quiz.appendChild(div);
+  });
+}
 
-  </section>
+function showResult() {
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("result-wrapper");
+
+  const result = document.createElement("div");
+  result.classList.add("result");
+  
+
+  result.innerHTML = `
+    <div>⚡ 🖥️ <strong>Quiz Finalizado! Você teve um ótimo desempenho e acertou ${score} de ${quizData.length}!</strong></div>
+    <button class="restart-btn" onclick="resetarQuiz()">🔄 Refazer Quiz</button>
+  `;
+  
+  wrapper.appendChild(result);
+  quiz.appendChild(wrapper);
+  
+  result.scrollIntoView({ behavior: 'smooth' });
+}
+
+function resetarQuiz() {
+  score = 0;
+  respondidas = 0;
+  iniciarQuiz();
+  window.scrollTo({ top: 0, behavior: 'smooth' }); 
+}
+
+iniciarQuiz();
+</script>
 
 </body>
 </html>

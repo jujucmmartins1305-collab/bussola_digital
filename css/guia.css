@@ -1,8 +1,8 @@
 :root {
-    --accent-cyan: #0ea5a4;
-    --accent-green: #0ea5a4;
-    --accent-blue: #233455;
-    --text: #1c1f22;
+    --accent-cyan: #2fe6d2;
+    --accent-green: #5cf28f;
+    --accent-blue: #3aa0ff;
+    --text: #acb7c2;
     --text-muted: #1659af;
     --border-soft: #233455;
     --danger: #ff5d6c;
@@ -23,7 +23,7 @@ nav, a{
 }
 
 body {
-    background-color: #fff;
+    background-color: #0f1827;
     color: var(--text);
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
     line-height: 1.65;
